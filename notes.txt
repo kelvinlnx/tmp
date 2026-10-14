@@ -1,0 +1,34 @@
+OpenShift(oc)/Kubernetes(kubectl) commands and resulting objects
+================================================================
+  oc run PODNAME --image …
+  -> POD
+  
+  oc create deploy DEPLOYNAME …
+  	-> DEPLOY -> RS -> POD
+  
+  oc create service|ingress|secret|cm|ns
+  	-> SVC|INGRESS|SECRET|CM|NS
+  
+  oc create job
+  	-> JOB -> POD
+  
+  oc create cronjob
+  	-> CRONJOB -> JOB -> POD
+  
+  Statefulset? DaemonSet? PVC? PV? ---> YAML/JSON
+  
+  oc expose DEPLOY/DC/RC/RS/POD
+  	-> SVC
+
+OpenShift Specific
+==================
+  oc set volume DEPLOYNAME
+  	-> PV -> PVC
+  
+  oc new-app …
+  	-> DEPLOY/DC -> RS/RC -> POD
+  	-> BC -> BUILD -> BUILD_POD
+  	-> SVC
+  
+  oc expose SVC
+  	-> ROUTE
